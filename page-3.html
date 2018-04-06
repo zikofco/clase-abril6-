@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Hola D3.js!</title>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <h1>D3.js</h1>
+      </div>
+      <div class="col-md-6 pt-2">
+        <svg width="360" height="360" style="background:#eee;">
+          <g>
+            <circle r="40" cx="100" cy="100"/>
+            <circle r="40" cx="250" cy="100"/>
+            <circle r="40" cx="100" cy="250"/>
+            <circle r="40" cx="250" cy="250"/>
+          </g>
+        </svg>
+      </div>
+      <div class="col-md-6 pt-2">
+        <p>No hagamos más modificaciones sobre la base del azar. Usemos datos para una <a href="https://github.com/profesorfaco/enedi/blob/gh-pages/README.md#introducci%C3%93n-a-la-visualizaci%C3%93n">representación gráfica</a>. Por ejemplo, las cuatro ciudades más pobladas de Chile:</p>
+<pre><code>var ciudades = [
+  { name: 'Santiago', population: 5631839},
+  { name: 'Concepción', population: 848023},
+  { name: 'Valparaíso', population: 824006},
+  { name: 'Coquimbo', population: 296253}, 
+];</code></pre>
+        <p><code>.data(ciudades)</code> - Vamos a buscar los datos de la variables ciudades.</p>
+        <p><code>.attr('r', function(d) { return d.population / 57000; });</code> - Modificamos el radio con cada dato (lo divido por 57000 porque así cabe justo dentro del svg).</p>
+      </div>
+      <div class="col-md-12 pt-3">
+				<nav aria-label="navegacion">
+					<ul class="pagination">
+             <li class="page-item"><a class="page-link" href="index.html">Portada</a></li>
+            <li class="page-item"><a class="page-link" href="page-1.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="page-2.html">2</a></li>
+            <li class="page-item active"><a class="page-link" href="page-3.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="page-4.html">4</a></li>
+            <li class="page-item"><a class="page-link" href="page-5.html">5</a></li>
+            <li class="page-item"><a class="page-link" href="page-6.html">6</a></li>
+            <li class="page-item"><a class="page-link" href="page-7.html">7</a></li>
+            <li class="page-item"><a class="page-link" href="page-8.html">8</a></li>              
+				  	</ul>
+				</nav>
+      </div>
+    </div>
+  </div>
+<!--D3.js-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+  //crear una variable llamada ciudades
+  var ciudades = [
+    {name:'Santiago',population:5631839},
+    {name:'Concepción',population:848023},
+    {name:'Valparaíso',population:824006},
+    {name:'Coquimbo',population:296253}
+  ];
+  //seleccionar todos los "circle" en el documento
+  d3.selectAll('circle')
+  //tomar la data de la variable llamada ciudades
+  .data(ciudades)
+  //modificar el radio en los cículos tantas veces como datos existen en la variable
+  .attr('r', function(d) {
+    return d.population / 57000;
+  })
+</script>
+<!-- jQuery primero, luego Popper.js, y finalmente Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

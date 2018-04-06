@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Hola D3.js!</title>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <h1>Dibujemos</h1>
+      </div>
+      <div class="col-md-6">
+        <h4>Podemos dibujar en el <a href="https://developer.mozilla.org/es/docs/Web/Guide/HTML/Canvas_tutorial">canvas</a></h4>
+        <canvas id="primerCanvas" width="360" height="120" style="background:#ddd;"></canvas>
+        <script>
+          //Este script dibuja en el canvas
+          var canvas = document.getElementById("primerCanvas");
+          var texto = canvas.getContext("2d");
+          texto.font = "16px Arial";
+          texto.fillText("Soy un zikito, mírame de cerca.",20,40);        
+        </script>
+      </div>
+      <div class="col-md-6">
+        <h4>Podemos dibujar en el <a href="https://developer.mozilla.org/es/docs/Web/SVG">svg</a></h4>
+        <svg width="360" height="120" style="background:#ddd;">
+          <text x="20" y="40" fill="black" style="font-size:16px;">Soy un svg, mírame de cerca.</text>
+        </svg>
+      </div>
+      <div class="col-md-12 pt-4">
+        <p>Aquí tenemos un canvas y un svg porque <strong>p5.js utiliza el primero</strong> mientras que <strong>D3.js utiliza el segundo</strong>.</p>
+        <p><strong>¿Qué es p5.js y qué es D3.js?</strong> El apellido <strong>.js</strong> puede darles una pista. Se trata de <strong>JavaScript</strong>. Ambas son bibliotecas de JavaScript; mientras <a href="https://p5js.org/es/">p5.js</a> es una biblioteca que reinterpreta Processing para la Web, <a href="https://d3js.org/">D3.js</a> es una biblioteca desarrollada para producir visualizaciones de datos en Web.</p>
+        <p>Ahora revisaremos <a href="https://d3js.org/">D3.js</a>, lo que implica trabajar con HTML, CSS y <strong>SVG</strong>, además de JavaScript simplificado por la misma biblioteca.</p>
+      </div>
+      <div class="col-md-12 pt-3">
+				<nav aria-label="navegacion">
+          <ul class="pagination">
+            <li class="page-item active"><a class="page-link" href="index.html">Portada</a></li>
+            <li class="page-item"><a class="page-link" href="page-1.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="page-2.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="page-3.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="page-4.html">4</a></li>
+            <li class="page-item"><a class="page-link" href="page-5.html">5</a></li>
+            <li class="page-item"><a class="page-link" href="page-6.html">6</a></li>
+            <li class="page-item"><a class="page-link" href="page-7.html">7</a></li>
+            <li class="page-item"><a class="page-link" href="page-8.html">8</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+<!-- jQuery primero, luego Popper.js, y finalmente Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

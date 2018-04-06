@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Migración</title>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <h1>DEMOGRAFÍA | Migración . C H I L E - B R A S I L</h1>
+      </div>
+      <div class="col-md-12 pt-2">
+        <svg></svg>
+      </div>
+      <div class="col-md-12 pt-3">
+				<nav aria-label="navegacion">
+					<ul class="pagination">
+            <li class="page-item"><a class="page-link" href="index.html">Portada</a></li>
+            <li class="page-item"><a class="page-link" href="page-1.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="page-2.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="page-3.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="page-4.html">4</a></li>
+            <li class="page-item"><a class="page-link" href="page-5.html">5</a></li>
+            <li class="page-item active"><a class="page-link" href="page-6.html">6</a></li>
+            <li class="page-item"><a class="page-link" href="page-7.html">7</a></li>
+            <li class="page-item"><a class="page-link" href="page-8.html">8</a></li>              
+				  	</ul>
+				</nav>
+      </div>
+    </div>
+  </div>
+<!--D3.js-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+//variables globales  
+var width = 1080;
+var height = 600;
+//los datos
+var data = [
+  {pais : "Las Condes", superficie : 565},
+  {pais : "Santiago", superficie : 421},
+  {pais : "Providencia", superficie : 353},
+  {pais : "Ñuñoa", superficie : 131},
+  {pais : "Maipú", superficie : 83},
+  {pais : "Quilicura", superficie : 59}
+];
+//selecciona el svg
+var svg = d3.select("svg")
+.attr("width", width)
+.attr("height", height)
+.style("background","#808000");
+//selecciona el grupo
+var g = svg.selectAll("g")
+  .data(data)
+  .enter()
+  .append("g")  
+  .attr("transform", "translate(75,0)")
+//mete un "circle"
+g.append("circle")
+  .attr("cx", function(d, i) { return i * (width/(data.length+1)) + 50; })
+  .attr("cy", function(d, i) { return height/2; })
+  .attr("r", function(d) { return d.superficie/12; })
+  .attr("fill","#FFFF00")
+//mete un "text"
+g.append("text")
+  .attr("x", function(d, i) { return i * (width/(data.length+1)) + 50; })
+  .attr("y", height/1.4)
+  .attr("text-anchor","middle")
+  .text(function(d) { return d.pais; })
+//mete otro "text"  
+g.append("text")
+  .attr("x", function(d, i) { return i * (width/(data.length+1)) + 50; })
+  .attr("y", height-80)
+  .attr("font-size","10")
+  .attr("text-anchor","middle")
+  .text(function(d) { return d.superficie; })
+</script>
+<!-- jQuery primero, luego Popper.js, y finalmente Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
+    
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.5;}
+	.st1{fill:#6DA544;}
+	.st2{fill:#FFDA44;}
+	.st3{fill:#F0F0F0;}
+	.st4{fill:#0052B4;}
+	.st5{fill:#D80027;}
+</style>
+<g class="st0">
+	<path class="st1" d="M439,519.4c0,242.7-196.8,439.5-439.5,439.5c-242.7,0-439.5-196.8-439.5-439.5C-440,276.6-243.2,79.9-0.5,79.9
+		C242.2,79.9,439,276.6,439,519.4L439,519.4z M439,519.4"/>
+	<path class="st2" d="M-0.5,251.8l363.1,267.5L-0.5,786.9l-363.1-267.5L-0.5,251.8z M-0.5,251.8"/>
+	<path class="st3" d="M152.4,519.4c0,84.4-68.4,152.9-152.9,152.9c-84.4,0-152.9-68.4-152.9-152.9c0-84.4,68.4-152.9,152.9-152.9
+		C83.9,366.5,152.4,434.9,152.4,519.4L152.4,519.4z M152.4,519.4"/>
+	<path class="st4" d="M-76.9,509.8c-26.6,0-52.2,4-76.4,11.5c1.1,83.5,69.1,150.9,152.8,150.9c51.8,0,97.5-25.8,125.2-65.2
+		C77.4,547.8,4.6,509.8-76.9,509.8L-76.9,509.8z M-76.9,509.8"/>
+	<path class="st4" d="M149.5,548.6c1.8-9.5,2.8-19.3,2.8-29.3c0-84.4-68.4-152.9-152.9-152.9c-63,0-117.1,38.1-140.5,92.5
+		c20.7-4.3,42.1-6.5,64-6.5C11.9,452.5,92.2,489.4,149.5,548.6L149.5,548.6z M149.5,548.6"/>
+</g>
+<g class="st0">
+	<path class="st3" d="M1727.1,510.9c0,243.6-197.5,441.1-441.1,441.1C1042.5,952,845,754.5,845,510.9
+		c0-243.6,197.5-441.1,441.1-441.1C1529.7,69.9,1727.1,267.3,1727.1,510.9L1727.1,510.9z M1727.1,510.9"/>
+	<path class="st5" d="M1727.1,510.9c0,243.6-197.5,441.1-441.1,441.1C1042.5,952,845,754.5,845,510.9c0-243.6,441.1,0,441.1,0
+		H1727.1z M1727.1,510.9"/>
+	<path class="st4" d="M845,510.9c0-243.6,197.5-441.1,441.1-441.1v441.1H845z M845,510.9"/>
+	<path class="st3" d="M1107.6,223.3l28.6,87.9h92.4l-74.8,54.3l28.6,87.9l-74.8-54.3l-74.8,54.3l28.6-87.9l-74.8-54.3h92.4
+		L1107.6,223.3z M1107.6,223.3"/>
+</g>
+</svg>
+    
+    
+
+
+</body>
+</html>

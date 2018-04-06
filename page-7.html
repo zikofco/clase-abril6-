@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Planetas</title>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-12 py-3">
+        <h1>UNI VERSO</h1>
+      </div>
+      <div class="col-md-12 pt-2">
+        <svg></svg>
+      </div>
+      <div class="col-md-12 pt-3">
+        <nav aria-label="navegacion">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="index.html">Portada</a></li>
+            <li class="page-item"><a class="page-link" href="page-1.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="page-2.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="page-3.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="page-4.html">4</a></li>
+            <li class="page-item"><a class="page-link" href="page-5.html">5</a></li>
+            <li class="page-item"><a class="page-link" href="page-6.html">6</a></li>
+            <li class="page-item active"><a class="page-link" href="page-7.html">7</a></li>
+            <li class="page-item"><a class="page-link" href="page-8.html">8</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+<!--D3.js-->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+//variables globales, la primera solo es creada, la segunda tiene contenido 
+var width, height = 360;
+//los datos
+var data = [
+{ planeta:"Mercurio", radio: 2440, distancia: 57910000  },
+{ planeta:"Venus", radio: 6052, distancia: 108200000 },
+{ planeta:"Tierra", radio: 6378, distancia: 149600000 },
+{ planeta:"Marte", radio: 3397, distancia: 227940000 },
+{ planeta:"Júpiter", radio: 71492,  distancia: 778330000 },
+{ planeta:"Saturno", radio: 60268,  distancia: 1429400000 },
+{ planeta:"Urano", radio: 25559,  distancia: 2870990000 },
+{ planeta:"Neptuno", radio: 24746,  distancia: 4504300000 }
+]
+
+width = (data[7].distancia/5500000)+90
+//selecciona el svg
+var svg = d3.select("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .style("background","#AFFEEE")
+  .style("background-image","url('https://cdn130.picsart.com/248738193014212.png?r1024x1024')")
+.style("background-size","cover")
+.style("background-position","center center");
+//selecciona todo g
+var g = svg.selectAll("g")
+  .data(data)
+  .enter()
+  .append("g")  
+  .attr("transform", "translate(30,0)")
+//mete un "circle" en g
+g.append("circle")
+  .attr("cx", function(d) { return d.distancia/5500000; })
+  .attr("cy", function(d) { return height/2; })
+  .attr("r", function(d) { return d.radio/3000; })
+//mete un "text" en g
+g.append("text")
+  .attr("x", function(d) { return d.distancia/5500000; })
+  .attr("y", function(d,i) {
+  //esto es para arreglar las primeras 
+    if(i < 4){
+      return height/1.5+(30*i);
+    }else{
+      return height/1.5;
+    }
+  })
+  .attr("font-size","11")
+  .attr("text-anchor","middle")
+  .text(function(d) { return d.planeta; })
+</script>
+<!-- jQuery primero, luego Popper.js, y finalmente Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
